@@ -8,7 +8,7 @@
 Summary:	Sereal::Encoder - Fast, compact, powerful binary serialization
 Name:		perl-Sereal-Encoder
 Version:	3.002
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
