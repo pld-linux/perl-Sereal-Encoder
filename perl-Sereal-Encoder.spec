@@ -4,7 +4,6 @@
 
 %define		pdir	Sereal
 %define		pnam	Encoder
-%include	/usr/lib/rpm/macros.perl
 Summary:	Sereal::Encoder - Fast, compact, powerful binary serialization
 Summary(pl.UTF-8):	Sereal::Encoder - szybka, zwarta, potężna serializacja binarna
 Name:		perl-Sereal-Encoder
