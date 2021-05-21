@@ -1,3 +1,4 @@
+# TODO: system libcsnappy, libminiz?
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
@@ -7,19 +8,27 @@
 Summary:	Sereal::Encoder - Fast, compact, powerful binary serialization
 Summary(pl.UTF-8):	Sereal::Encoder - szybka, zwarta, potężna serializacja binarna
 Name:		perl-Sereal-Encoder
-Version:	4.005
-Release:	4
+Version:	4.018
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/Y/YV/YVES/Sereal-Encoder-%{version}.tar.gz
-# Source0-md5:	5af0152a2c7f13e7ae1d23952a55dd03
-URL:		http://search.cpan.org/dist/Sereal-Encoder/
+# Source0-md5:	702295dcda16a125be9241909390ea98
+URL:		https://metacpan.org/release/Sereal-Encoder
+BuildRequires:	perl-ExtUtils-MakeMaker >= 7.0
+BuildRequires:	perl-ExtUtils-ParseXS >= 2.21
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
+BuildRequires:	zstd-devel
 %if %{with tests}
-BuildRequires:	perl-Sereal-Decoder >= 3.00
+BuildRequires:	perl-Scalar-List-Utils
+BuildRequires:	perl-Sereal-Decoder >= 4.002
+BuildRequires:	perl-Test-Deep
+BuildRequires:	perl-Test-Differences
 BuildRequires:	perl-Test-LongString
+BuildRequires:	perl-Test-Simple >= 0.88
 BuildRequires:	perl-Test-Warn
 %endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
