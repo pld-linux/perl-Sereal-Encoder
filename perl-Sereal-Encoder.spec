@@ -1,20 +1,20 @@
 # TODO: system libcsnappy, libminiz?
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 
 %define		pdir	Sereal
 %define		pnam	Encoder
 Summary:	Sereal::Encoder - Fast, compact, powerful binary serialization
 Summary(pl.UTF-8):	Sereal::Encoder - szybka, zwarta, potężna serializacja binarna
 Name:		perl-Sereal-Encoder
-Version:	4.023
-Release:	2
+Version:	4.025
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/Y/YV/YVES/Sereal-Encoder-%{version}.tar.gz
-# Source0-md5:	c46d822f6b7113a9fd3c8c1f8ab115da
+Source0:	https://www.cpan.org/modules/by-authors/id/Y/YV/YVES/Sereal-Encoder-%{version}.tar.gz
+# Source0-md5:	feaedc77816634c6d6681c0b971eceb9
 URL:		https://metacpan.org/release/Sereal-Encoder
 BuildRequires:	perl-ExtUtils-MakeMaker >= 7.0
 BuildRequires:	perl-ExtUtils-ParseXS >= 2.21
