@@ -9,7 +9,7 @@ Summary:	Sereal::Encoder - Fast, compact, powerful binary serialization
 Summary(pl.UTF-8):	Sereal::Encoder - szybka, zwarta, potężna serializacja binarna
 Name:		perl-Sereal-Encoder
 Version:	4.025
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
