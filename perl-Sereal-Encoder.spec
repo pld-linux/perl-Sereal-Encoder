@@ -8,14 +8,18 @@
 Summary:	Sereal::Encoder - Fast, compact, powerful binary serialization
 Summary(pl.UTF-8):	Sereal::Encoder - szybka, zwarta, potężna serializacja binarna
 Name:		perl-Sereal-Encoder
-Version:	4.025
-Release:	3
+Version:	5.004
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-authors/id/Y/YV/YVES/Sereal-Encoder-%{version}.tar.gz
-# Source0-md5:	feaedc77816634c6d6681c0b971eceb9
+# Source0-md5:	893cb6672cee5505b897f3361487c158
+Patch0:		Sereal-Encoder-miniz.patch
 URL:		https://metacpan.org/release/Sereal-Encoder
+BuildRequires:	csnappy-devel
+BuildRequires:	miniz-devel
+BuildRequires:	perl-Devel-CheckLib >= 1.16
 BuildRequires:	perl-ExtUtils-MakeMaker >= 7.0
 BuildRequires:	perl-ExtUtils-ParseXS >= 2.21
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -24,7 +28,7 @@ BuildRequires:	rpmbuild(macros) >= 1.745
 BuildRequires:	zstd-devel
 %if %{with tests}
 BuildRequires:	perl-Scalar-List-Utils
-BuildRequires:	perl-Sereal-Decoder >= 4.002
+BuildRequires:	perl-Sereal-Decoder >= %{version}
 BuildRequires:	perl-Test-Deep
 BuildRequires:	perl-Test-Differences
 BuildRequires:	perl-Test-LongString
@@ -63,8 +67,16 @@ repozytorium github <https://github.com/Sereal/Sereal>.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
 
 %build
+%ifarch %{ix86} %{x8664} x32
+export USE_UNALIGNED=yes
+%else
+export USE_UNALIGNED=no
+%endif
+export NO_ASM=no
+
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} -j1 \
