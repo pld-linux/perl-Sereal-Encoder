@@ -1,4 +1,3 @@
-# TODO: system libcsnappy, libminiz?
 #
 # Conditional build:
 %bcond_without	tests	# unit tests
@@ -16,7 +15,7 @@ Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-authors/id/Y/YV/YVES/Sereal-Encoder-%{version}.tar.gz
 # Source0-md5:	893cb6672cee5505b897f3361487c158
 Patch0:		Sereal-Encoder-miniz.patch
-URL:		https://metacpan.org/release/Sereal-Encoder
+URL:		https://metacpan.org/dist/Sereal-Encoder
 BuildRequires:	csnappy-devel
 BuildRequires:	miniz-devel
 BuildRequires:	perl-Devel-CheckLib >= 1.16
