@@ -7,13 +7,13 @@
 Summary:	Sereal::Encoder - Fast, compact, powerful binary serialization
 Summary(pl.UTF-8):	Sereal::Encoder - szybka, zwarta, potężna serializacja binarna
 Name:		perl-Sereal-Encoder
-Version:	5.004
-Release:	3
+Version:	7.003
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	https://www.cpan.org/modules/by-authors/id/Y/YV/YVES/Sereal-Encoder-%{version}.tar.gz
-# Source0-md5:	893cb6672cee5505b897f3361487c158
+# Source0-md5:	3b8045f788c273e2a444183c36a89b72
 Patch0:		Sereal-Encoder-miniz.patch
 URL:		https://metacpan.org/dist/Sereal-Encoder
 BuildRequires:	csnappy-devel
